@@ -1,0 +1,1 @@
+#define WAIT_MULTIPLE(c, ar, all)
