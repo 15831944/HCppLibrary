@@ -37,6 +37,8 @@ protected:
     HString m_strHostName;
 	HString m_strAppDirectory;
 	HString m_strAppName;
+
+    HString parseParam (HString );
 	
 	CTime m_tmStart;
     

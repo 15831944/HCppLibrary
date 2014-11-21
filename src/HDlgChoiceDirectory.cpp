@@ -5,7 +5,8 @@
 
 #include "HDlgChoiceDirectory.h"
 
-#if ! defined _WIN32
+//#if ! defined _WIN32
+#ifndef x64
     #define GWL_HINSTANCE GWLP_HINSTANCE
 #else
 #endif

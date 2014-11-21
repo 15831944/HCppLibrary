@@ -330,3 +330,38 @@ HString HWinApp::ResourceVersion (const _TCHAR *key) {
 
     return strRes;
 }
+
+HString HWinApp::parseParam (HString par) {
+    HString strRes
+        , strCmdLine = m_lpCmdLine;
+    int posPar = strCmdLine.find (0, par);
+    BOOL bParLast = FALSE
+        , bParValueQuoted = FALSE;
+
+    if (! (posPar < 0)) {
+        posPar += (par.length () + 1);
+        //Определить параметр крайний
+        if (strCmdLine.find (posPar, '/') < 0) {
+            bParLast = TRUE;
+        } else {
+        }
+
+        //Определить значение параметра в кавычках
+        if (strCmdLine.GetAt (posPar) == '"') {
+            bParValueQuoted = TRUE;
+        } else {
+        }
+
+        if (bParLast == TRUE)
+            strRes = strCmdLine.mid (posPar);
+        else {
+            if (bParValueQuoted == TRUE)
+                strRes = strCmdLine.mid (posPar + 1, strCmdLine.find (posPar + 1, '"') - (posPar + 1));
+            else
+                strRes = strCmdLine.mid (posPar, strCmdLine.find (posPar, ' ') - posPar);
+        }
+    } else {
+    }
+
+    return strRes;
+}
