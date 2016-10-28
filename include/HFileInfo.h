@@ -1,5 +1,5 @@
 #pragma once
-#include <hstring.h>
+//#include <hstring.h>
 
 //EXT_DECLARE_HFILELOG
 
