@@ -1,10 +1,11 @@
 #pragma once
 #include "afxdialogex.h"
+#include <hstring.h>
 
 #define HDLG_MODALES 0x1
 #define HDLG_CHILD 0x2
 
-class HString;
+//class HString;
 
 #if ! defined IDD_HDLG
 	#define IDD_HDLG WM_USER + 7667
